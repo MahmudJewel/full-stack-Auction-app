@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # installed app 
     'api',
+    'bidding',
     
     # third party app
     'rest_framework',
