@@ -5,7 +5,7 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 	# password = serializers.CharField(write_only=True)
 	class Meta:
 		model = User
-		fields = ('first_name','last_name','email', 'username', 'password')
+		fields = ('id','first_name','last_name','email', 'username', 'password')
 	# overwrite create for set password 
 	def create(self, validated_data):
 		user = super(RegisterUserSerializer, self).create(validated_data)
