@@ -27,7 +27,7 @@ function ResponsiveNavbar() {
     return (
         <Navbar bg="light" expand="lg">
             <Container >
-                <Navbar.Brand href="/">OMD</Navbar.Brand>
+                <Navbar.Brand href="/">Auction</Navbar.Brand>
                 <div></div>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
