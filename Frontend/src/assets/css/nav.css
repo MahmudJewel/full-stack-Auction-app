@@ -1,0 +1,17 @@
+.link-color{
+    text-decoration: none;
+	/* color: Black; */
+	font-weight: bold;
+	padding: 5px 10px;
+	border-radius: 15px;
+}
+
+.active {
+	background-color: gold;
+	color: Black;
+	font-weight: bold;
+	padding: 5px 10px;
+	border-radius: 15px;
+}
+
+
