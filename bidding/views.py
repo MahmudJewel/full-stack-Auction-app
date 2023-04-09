@@ -36,7 +36,7 @@ class BiddingViewset(viewsets.ModelViewSet):
         if self.request.method == 'GET':
             self.permission_classes = [AllowAny, ]
         else:
-            self.permission_classes = [IsAuthenticated, IsBidOwner]
+            self.permission_classes = [IsAuthenticated, ]
         return super(BiddingViewset, self).get_permissions()
 
 

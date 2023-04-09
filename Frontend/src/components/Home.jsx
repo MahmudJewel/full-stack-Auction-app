@@ -32,6 +32,7 @@ export const Home = () => {
                     name = {item.name}
                     desc = {item.desc}
                     price = {item.price}
+                    slug = {item.id}
                 />
             )}
 

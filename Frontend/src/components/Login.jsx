@@ -65,7 +65,7 @@ export const Login = () => {
     useEffect(() => {
         // console.log("Errors are : ", formErrors);
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            // console.log(formValues);
+            console.log(formValues);
         }
     }, [formErrors]);
 

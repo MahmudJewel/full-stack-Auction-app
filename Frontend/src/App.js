@@ -10,6 +10,7 @@ import { Home } from "./components/Home";
 import { Login } from "./components/Login";
 import { Signup } from "./components/Signup";
 import { Logout } from "./components/Logout";
+import { ProductWithDetails } from "./components/ProductWithDetails";
 
 // css
 import "./App.css";
@@ -25,6 +26,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/product/:slug" element={<ProductWithDetails />} />
         </Routes>
       </Container>
     </BrowserRouter>
