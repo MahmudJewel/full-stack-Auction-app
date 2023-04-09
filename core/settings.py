@@ -38,39 +38,44 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # installed app 
+    # installed app
     'api',
     'bidding',
-    
+
     # third party app
     'rest_framework',
-	'rest_framework_simplejwt',
+    'rest_framework_simplejwt',
+    'corsheaders',
 ]
 
 # for jwt token auth
-REST_FRAMEWORK={
-	"NON_FIELD_ERRORS_KEY":"error",
-	"DEFAULT_AUTHENTICATION_CLASSES":(
-		'rest_framework_simplejwt.authentication.JWTAuthentication',
-		)
+REST_FRAMEWORK = {
+    "NON_FIELD_ERRORS_KEY": "error",
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
 SIMPLE_JWT = {
-	'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
-	'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
-	'ALGORITHM': 'HS256',
-	'AUTH_HEADER_TYPES': ('Bearer',),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ALGORITHM': 'HS256',
+    'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # CORS
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+# CORS
+CORS_ORIGIN_ALLOW_ALL = True  # for all site
 
 ROOT_URLCONF = 'core.urls'
 
