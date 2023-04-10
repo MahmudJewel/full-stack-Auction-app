@@ -33,3 +33,38 @@
 | *16* | *POST* | ```/api/auction/``` | _Create new bid_|_Authenticated_|
 | *17* | *PUT* | ```/api/auction/uid/``` | _Update bid_|_Authenticated_|
 | *18* | *DELETE* | ```/api/auction/uid/``` | _Delete bid_|_Authenticated_|
+
+# Some Screenshot
+### Home page
+
+![1-home](https://user-images.githubusercontent.com/35461355/230955551-dceb329d-9055-4f52-9753-173aefaba649.png)
+
+### Details Page
+
+![2-detail page](https://user-images.githubusercontent.com/35461355/230955657-02690695-5564-4bec-88e7-b5ea9630f9c2.png)
+
+
+### Details with loging warning
+
+![3-details with loging warning](https://user-images.githubusercontent.com/35461355/230955719-1a35bb33-1fd8-4a8a-8ec4-fba1fa50dec6.png)
+
+### Details with price warning
+
+![4-details price warning](https://user-images.githubusercontent.com/35461355/230955737-3d0c875e-b675-4be9-973c-d58acd1a9045.png)
+
+### Price updated
+
+![5-price updated](https://user-images.githubusercontent.com/35461355/230955777-f99bef99-cd43-4f48-85fb-880b0f24294e.png)
+
+### Signup page
+
+![6-signup](https://user-images.githubusercontent.com/35461355/230956249-be58be10-7247-43d7-917c-b8ac48f19942.png)
+
+
+
+
+
+
+
+
+
