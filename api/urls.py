@@ -3,7 +3,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 # views 
 from .views import UserViewset
-from bidding.views import BiddingViewset, ProductViewset
+from bidding.views import BiddingViewset, ProductViewset, UserwiseBids
 
 # router 
 router = DefaultRouter()
@@ -17,4 +17,5 @@ router.register('auction', BiddingViewset, basename='auction')
 urlpatterns = [
     # router
     path('', include(router.urls)),
+    path('bids/<int:uid>/', UserwiseBids.as_view(), name='userbids'),
 ]

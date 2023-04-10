@@ -11,7 +11,7 @@ import { Login } from "./components/Login";
 import { Signup } from "./components/Signup";
 import { Logout } from "./components/Logout";
 import { ProductWithDetails } from "./components/ProductWithDetails";
-
+import { BidList } from "./components/BidList";
 // css
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -26,6 +26,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/bidlist" element={<BidList />} />
           <Route path="/product/:slug" element={<ProductWithDetails />} />
         </Routes>
       </Container>

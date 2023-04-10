@@ -5,7 +5,8 @@ from .models import Product, Bid
 class BiddingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bid
-        fields = ('product', 'bidder', 'amount')
+        fields = ('id','product', 'bidder', 'amount')
+        # depth=1
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:

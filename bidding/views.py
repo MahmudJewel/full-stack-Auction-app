@@ -1,6 +1,7 @@
 # libraries
 from rest_framework.views import APIView
 from rest_framework import viewsets
+from rest_framework.generics import ListAPIView
 from rest_framework.permissions import (
     IsAuthenticated,
     IsAdminUser,
@@ -26,11 +27,10 @@ class ProductViewset(viewsets.ModelViewSet):
             self.permission_classes = [IsAdminUser,]
         return super(ProductViewset, self).get_permissions()
 
-# Customer creation, edition, deletion through viewset
+# Auction creation, edition, deletion through viewset
 class BiddingViewset(viewsets.ModelViewSet):
     serializer_class = BiddingSerializer
     queryset = Bid.objects.all()
-    # queryset = Group.objects.get(name="CUSTOMER").user_set.all()
 
     def get_permissions(self):
         if self.request.method == 'GET':
@@ -43,3 +43,11 @@ class BiddingViewset(viewsets.ModelViewSet):
 class IsBidOwner(BasePermission):
     def has_object_permission(self, request, view, obj):
         return obj.bidder == request.user
+
+# listing bids according to user
+class UserwiseBids(ListAPIView):
+    serializer_class = BiddingSerializer
+    def get_queryset(self):
+        userid = self.kwargs['uid']
+        queryset = Bid.objects.filter(bidder__id=userid)
+        return queryset

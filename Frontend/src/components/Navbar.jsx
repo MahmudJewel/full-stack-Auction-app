@@ -19,18 +19,39 @@ import axiosInstance from "../axios";
 function ResponsiveNavbar() {
     const [isAuth, setIsAuth] = useState(false);
     const [user, setUser] = useState(null);
-    const token = localStorage.getItem('access_token');
     // console.log('Token => ', token)
-    if (token) {
-        const decodedToken = jwt_decode(token);
-        // console.log('Decoded token=>', decodedToken.user_id)
-        // const {username} = decodedToken.username;
-        // setUser(username)
+    const userinfo = async (userid) => {
+        const config = {
+            headers: {
+                Authorization: localStorage.getItem('access_token')
+                    ? 'Bearer ' + localStorage.getItem('access_token')
+                    : null,
+                "Content-Type": "application/json",
+            },
+        };
+
+        try {
+            const res = await axiosInstance.get(`auth/user/${userid}`, config);
+            const username = res.data.username
+            setUser(username)
+            console.log('Userinfo', username)
+        } catch (err) {
+            console.log('Errors => ', err)
+        }
     }
 
     useEffect(() => {
         if (localStorage.getItem('access_token') !== null) {
             setIsAuth(true);
+        }
+        const token = localStorage.getItem('access_token');
+        if (token) {
+            const decodedToken = jwt_decode(token);
+            const user_id = decodedToken.user_id
+            // console.log('Decoded token=>', user_id)
+            userinfo(user_id);
+
+
         }
     }, [isAuth]);
 
@@ -55,7 +76,7 @@ function ResponsiveNavbar() {
                     >
 
                         <Nav.Link >< NavLink activeClassName="active" className='link-color' to="/">Home</NavLink></Nav.Link >
-                        {isAuth ? <Nav.Link >< NavLink activeClassName="active" className='link-color' to="/">Hi {user}</NavLink></Nav.Link > :
+                        {isAuth ? <Nav.Link >< NavLink activeClassName="active" className='link-color' to="/bidlist">Hi {user}</NavLink></Nav.Link > :
                             <Nav.Link >< NavLink activeClassName="active" className='link-color' to="/signup">Signup</NavLink></Nav.Link >
                         }
 
