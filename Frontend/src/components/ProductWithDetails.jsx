@@ -52,39 +52,60 @@ export const ProductWithDetails = () => {
     };
 
     const submitBid = async () => {
-        const config = {
-            headers: {
-                Authorization: localStorage.getItem('access_token')
-                    ? 'Bearer ' + localStorage.getItem('access_token')
-                    : null,
-                "Content-Type": "application/json",
-            },
-        };
         const token = localStorage.getItem('access_token');
-        const decodedToken = jwtDecode(token);
-        console.log('Decoded token=>', decodedToken)
-        const  id  = decodedToken.user_id;
+        // console.log('bid_price', formValues.bid_price)
+        // console.log('price', price)
 
-        const bidder = id
-        const product = p_id
-        const amount = formValues.bid_price
-
-        const body = JSON.stringify({ bidder, product, amount });
-        console.log(body)
-        try {
-            const res = await axiosInstance.post(`auction/`, body, config);
-            // const data = res.data
-            // console.log(body)
-        } catch (err) {
-            console.log('Errors => ', err)
+        if (!token) {
+            const errors = {};
+            errors.authenticate = 'Please login to bid'
+            setFormErrors(errors)
         }
+
+        else if (token && formValues.bid_price < price) {
+            const errors = {};
+            errors.valid_price = 'Your price must be greater than highest bid'
+            setFormErrors(errors)
+        }
+        else {
+            const errors = {};
+            errors.valid_price = ''
+            setFormErrors(errors)
+
+            const config = {
+                headers: {
+                    Authorization: localStorage.getItem('access_token')
+                        ? 'Bearer ' + localStorage.getItem('access_token')
+                        : null,
+                    "Content-Type": "application/json",
+                },
+            };
+
+            const decodedToken = jwtDecode(token);
+            // console.log('token====>', token)
+            const id = decodedToken.user_id;
+            const bidder = id
+            const product = p_id
+            const amount = formValues.bid_price
+
+            const body = JSON.stringify({ bidder, product, amount });
+            console.log(body)
+            try {
+                // const res = await axiosInstance.post(`auction/`, body, config);
+                // const data = res.data
+                console.log('===> ', body)
+            } catch (err) {
+                console.log('Errors => ', err)
+            }
+        }
+
     }
 
     useEffect(() => {
         if (slug && slug !== "") {
             fetchData();
         }
-    }, [slug]);
+    }, [slug, formErrors.valid_price]);
 
     return (
         <Container>
@@ -96,8 +117,10 @@ export const ProductWithDetails = () => {
                         {desc}
                     </Card.Text>
                     <Card.Text>
-                        Price: {price}
+                        Highest Price: <b>{price}</b>
                     </Card.Text>
+                    <p className="text-danger">{formErrors.valid_price}</p>
+                    <p className="text-danger">{formErrors.authenticate}</p>
                     <Form>
                         <Form.Group className="mb-3">
                             <Form.Label>Bidding Price</Form.Label>

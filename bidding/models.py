@@ -43,7 +43,13 @@ class Bid(models.Model):
         if highest_bid and self.amount <= highest_bid.amount:
             raise ValidationError(
                 "Your bid must be higher than the current highest bid.")
-
+        
     def save(self, *args, **kwargs):
-        self.full_clean()
-        super().save(*args, **kwargs)
+        if self.amount > self.product.price:
+            self.product.price = self.amount
+            self.product.save(update_fields=['price'])
+        super(Bid, self).save(*args, **kwargs)
+
+    # def save(self, *args, **kwargs):
+    #     self.full_clean()
+    #     super().save(*args, **kwargs)
