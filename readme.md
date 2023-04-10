@@ -35,7 +35,7 @@
 | *18* | *DELETE* | ```/api/auction/uid/``` | _Delete bid_|_Authenticated_|
 
 # Some Screenshot
-### Home page
+### Home Page
 
 ![1-home](https://user-images.githubusercontent.com/35461355/230955551-dceb329d-9055-4f52-9753-173aefaba649.png)
 
@@ -44,19 +44,19 @@
 ![2-detail page](https://user-images.githubusercontent.com/35461355/230955657-02690695-5564-4bec-88e7-b5ea9630f9c2.png)
 
 
-### Details with loging warning
+### Details with Loging Warning
 
 ![3-details with loging warning](https://user-images.githubusercontent.com/35461355/230955719-1a35bb33-1fd8-4a8a-8ec4-fba1fa50dec6.png)
 
-### Details with price warning
+### Details with Price Warning
 
 ![4-details price warning](https://user-images.githubusercontent.com/35461355/230955737-3d0c875e-b675-4be9-973c-d58acd1a9045.png)
 
-### Price updated
+### Price Updated
 
 ![5-price updated](https://user-images.githubusercontent.com/35461355/230955777-f99bef99-cd43-4f48-85fb-880b0f24294e.png)
 
-### Signup page
+### Signup Page
 
 ![6-signup](https://user-images.githubusercontent.com/35461355/230956249-be58be10-7247-43d7-917c-b8ac48f19942.png)
 
@@ -66,11 +66,12 @@
 
 ### Loging Page
 
+![8-login](https://user-images.githubusercontent.com/35461355/230957119-55989ea2-e46e-4352-8b43-d958d5be9714.png)
 
+### Loging Warning Page
 
+![9-login warning](https://user-images.githubusercontent.com/35461355/230957303-2f9f0a4b-da81-4b87-aae5-766eab1050f1.png)
 
-
-
-
-
+# Happy Coding
+## Juwel Mahmud
 
