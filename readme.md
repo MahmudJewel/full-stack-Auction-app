@@ -60,6 +60,12 @@
 
 ![6-signup](https://user-images.githubusercontent.com/35461355/230956249-be58be10-7247-43d7-917c-b8ac48f19942.png)
 
+### Signup Warning
+
+![7-signup warning](https://user-images.githubusercontent.com/35461355/230956540-a8c8ebe0-b9a5-4aa1-9ab3-d56577ebdd7e.png)
+
+### Loging Page
+
 
 
 
