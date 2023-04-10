@@ -67,7 +67,7 @@ export const ProductWithDetails = () => {
             errors.valid_price = 'Your price must be greater than highest bid'
             setFormErrors(errors)
         }
-        else {
+        else if (token && formValues.bid_price > price){
             const errors = {};
             errors.valid_price = ''
             setFormErrors(errors)
@@ -91,9 +91,10 @@ export const ProductWithDetails = () => {
             const body = JSON.stringify({ bidder, product, amount });
             console.log(body)
             try {
-                // const res = await axiosInstance.post(`auction/`, body, config);
+                const res = await axiosInstance.post(`auction/`, body, config);
                 // const data = res.data
                 console.log('===> ', body)
+                window.location.reload()
             } catch (err) {
                 console.log('Errors => ', err)
             }
