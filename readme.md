@@ -1,4 +1,19 @@
-﻿# Developed API
+﻿# Questions => Full Stack Test:
+Make a bidding website using “django rest framework” where multiple users can list their items.
+Tasks:
+* Create API Endpoints for user login and registration
+* Create- “Create, List, Details, Update, Bid” API endpoints for products
+* A bid has an ending time, the highest bidder at the moment of closure wins the bid
+* Make a frontend for using react or vue (feel free to use nuxt or next) with at least two pages (products and profile). You can use modals/dialogs for login, registration, etc.
+* The profile page will show the user&#39;s biddings, which bid he/she won, lost,or is currently active as well as his/her listing (through API)
+* The profile page should contain how much a user spent, or earned through biddings (through API)
+* You must display the list of the top 5 users with the highest bidding amounts (win/loss) on the
+logged-in user’s items (through API)
+We would love to see your imagination in UI. This is an open book exam, feel free to browse the
+internet, and ask on StackOverflow (share a link of your question if any)
+
+
+# Developed API
 ### Login & verify user
 | SRL | METHOD | ROUTE | FUNCTIONALITY |ACCESS|
 | ------- | ------- | ----- | ------------- | ------------- |
