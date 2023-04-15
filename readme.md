@@ -12,6 +12,48 @@ logged-in user’s items (through API)
 We would love to see your imagination in UI. This is an open book exam, feel free to browse the
 internet, and ask on StackOverflow (share a link of your question if any)
 
+## Tech stack I used
+#### Back-end:
+	Django Rest Framework (3.14.0)
+#### Front-end
+	React
+
+#### Other Libraries
+	django-cors-headers (3.14.0)
+	djangorestframework-simplejwt (5.2.2)
+	PyJWT (2.6.0)
+
+# Setup
+The first thing to do is to clone the repository:
+```sh
+$ git clone https://github.com/MahmudJewel/full-stack-Auction-app.git
+```
+### Back-end
+Create a virtual environment to install dependencies in and activate it:
+```sh
+$ cd full-stack-Auction-app
+$ python -m venv venv
+$ source venv/bin/activate
+```
+Then install the dependencies:
+```sh
+(venv)$ pip install -r requirements.txt
+```
+Note the `(venv)` in front of the prompt. This indicates that this terminal
+session operates in a virtual environment set up by `virtualenv2`.
+
+Once `pip` has finished downloading the dependencies:
+```sh
+(venv)$ python manage.py migrate
+(venv)$ python manage.py runserver 8000
+```
+### Front-end
+```sh
+$ cd Frontend
+$ npm install
+$ npm start
+```
+
 
 # Developed API
 ### Login & verify user
